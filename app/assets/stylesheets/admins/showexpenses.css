@@ -1,0 +1,32 @@
+.blck{
+    /* display: block;
+    height:100%;
+    width:100%;
+    background-color: black;
+    color:white; */
+    
+}
+.img{
+    height:500px;
+    width:500px;
+}
+.containermain{
+    display: flex;
+    flex-direction: column;
+   margin: auto;
+    width:800px;
+    height:500px;
+    border:1px solid black;
+    margin-top:5%;
+    justify-content: space-between;
+    
+}
+h3{
+    font-weight: lighter;
+    font-style: italic;
+
+}
+.containermain a{
+    height:45px;
+    width:100%
+}

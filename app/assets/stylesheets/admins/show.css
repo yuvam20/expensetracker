@@ -1,0 +1,17 @@
+
+.nameemail{
+    display: flex;
+    margin-left:40%;
+    width:250px;
+    height:40px;
+    background-color: bisque;
+    border-radius: 25px;
+    justify-content: center;
+    align-content: center;
+    margin-bottom: 5%;
+    margin-top:5%;
+}
+.expensesdiv{
+
+    margin-bottom:5%;
+}

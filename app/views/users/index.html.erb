@@ -1,0 +1,40 @@
+<%= render 'nav' %>
+
+<% if @expenses %>
+
+<% @expenses.each do |expense| %>
+
+<div class="expensesdiv" %>
+<a href="/users/search/<%=expense.id%>" class="btn btn-success"><%= expense.invoicenum %></a>
+<div class="left-side">
+
+<%= expense.description %>
+</div>
+<div class="center-side">
+<%= expense.amount %>
+</div>
+<div class="rightside">
+<%=expense.date %>
+</div>
+<% if expense.is_accpted == nil %>
+<div class="btn btn-warning button">
+<p>pending</p>
+
+</div>
+<%elsif expense.is_accpted =='true'%>
+<div class="btn btn-success button">
+<p>Accepted</p>
+
+</div>
+<%else%>
+<div class="btn btn-danger button">
+<p>Rejected</p>
+</div>
+<%end%>
+</div>
+<%end%>
+
+<%end%>
+
+
+<a href="/users/expenses" class="btn btn-dark create" >Create Expense</a>

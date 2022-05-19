@@ -1,0 +1,20 @@
+<%= render 'nav' %>
+<%if  @user %>
+
+<% @users.each do |user| %>
+<div class="main-div">
+<div class="left-side">
+<%=user.name %>
+</div>
+<div class="center-div">
+<%=user.email %>
+</div>
+<div class="right">
+<a href="/admin/show/<%=user.id %>" class="btn btn-dark" role="button">show</a>
+
+
+</div>
+</div>
+<%end%>
+<%end%>
+

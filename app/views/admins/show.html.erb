@@ -1,0 +1,42 @@
+<div class="container">
+<div class="nameemail">
+
+<%=@user.name%>,<%=@user.email %>
+</div>
+
+<div class="expenses">
+<% if @user.expenses.any? %>
+<%userexp = @user.expenses.order(userexp_at: :desc) %>
+<% userexp.each do |expense| %>
+<div class="expensesdiv" %>
+<div class="btn btn-success"><%= expense.invoicenum %></div>
+<div class="left-side">
+
+<%= expense.description %>
+</div>
+<div class="center-side">
+<%= expense.amount %>
+</div>
+<div class="rightside">
+<%=expense.date %>
+</div>
+
+<a href="/admin/search/<%=expense.id%>" >
+ <%if expense.is_accpted =='true'%>
+ <p class="btn btn-success button">Accepted</p>
+ <%elsif expense.is_accpted =='false'%>
+ <p class="btn btn-danger button">Rejected</p>
+ <%else%>
+ <p class="btn btn-warning button">Pending</p>
+ <%end%>
+ </a> 
+
+</div>
+<%end%>
+<%end%>
+
+</div>
+
+
+
+</div>

@@ -1,0 +1,34 @@
+<div class="blck">
+<%
+=begin%>
+ <%= image_tag url_for(:controller => "admins", :action => "show_image", :id => @expense.id) %> 
+<%
+=end%>
+<% if !@expense.bill == 0 %>
+<%= image_tag @expense.bill ,class: 'img' %>
+<%end%>
+<div class="containermain">
+ 
+ <h3>Name:<%=@user.email %> </h3>
+
+    <h3>Expense InvoiceNumber:<strong><%=@expense.invoicenum%> </strong></h3>
+    <h3>Expense description:<strong><%=@expense.description%></strong> </h3>
+    <h3>Expense Amount:<strong><%=@expense.amount%> </strong></h3>
+    <h3>Expense date:<strong><%=@expense.date%> </strong></h3>
+    <%if @expense.is_accpted == nil %>
+    <a href="/admin/accept/<%=@expense.id%>" class="btn btn-success">Accept </a>
+    <a href="/admin/reject/<%=@expense.id%>" class="btn btn-danger">Reject </a><%end%>
+    <% if @expense.comments.any? %>
+    <% @expense.comments.each do |comment|%>
+    <p><%=comment.name%>:<%= comment.description %>
+    <%end%>
+    <%end%>
+    <form method="post" action="/admin/comment" data-turbo="false">
+    <input class="form-control" type="text" name="description" />
+    <input type="submit" value="comment">
+    <input type="hidden"  name="name" value="<%=@user1.name%>">
+    
+    <input type="hidden" name="expense_id" value="<%=@expense.id%>">
+    </form>
+</div>
+</div>

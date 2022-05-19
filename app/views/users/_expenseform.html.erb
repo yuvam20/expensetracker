@@ -1,0 +1,38 @@
+
+<%= form_with model: @expense,url:'/users/handler/',data:{turbo: false} do |form|%>
+<table>
+
+<%=form.hidden_field :user_id,:value => @user.id %>
+<tr>
+<td ><%=form.label :invoicenum %></td>
+<td ><%=form.text_field :invoicenum, {class:"form-control"}%></td>
+</tr>
+</div>
+<tr>
+<td><%= form.label :description %></td>
+<td class="formcss"><%= form.text_field :description , {class:"form-control"}%></td>
+</tr>
+
+<tr>
+<td><%=form.label :amount %></td>
+<td class="formcss"><%= form.text_field :amount, {class:"form-control"}%></td>
+</tr>
+
+<tr>
+<td><%= form.label :date %></td>
+<td class="formcss"><%= form.date_field :date %></td>
+</tr>
+<tr>
+<td><%= form.label :bill %></td>
+<td ><%= form.file_field :bill %></td>
+</tr>
+<tr>
+<td colspan="3">
+<%= form.submit %>
+</td>
+</tr>
+</table>
+
+<%end%>
+
+

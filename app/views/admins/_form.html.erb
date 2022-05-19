@@ -1,0 +1,23 @@
+<div class="form_sign" >
+<%= form_with url: admin_signin_path,data:{turbo: false} do |form| %>
+<table>
+<tr>
+<div class="mb-3">
+<td><%= form.label :email %></td>
+<td><%= form.text_field :email %></td>
+</div>
+</tr>
+<tr>
+<div class="mb-3">
+<td><%= form.label :password %></td>
+<td><%= form.password_field :password %></td>
+</div>
+</tr>
+<tr>
+<div class="mb-3">
+
+<td colspan="4"><%= form.submit "signin" ,class:"btn btn-dark button" %>
+</div></td>
+</tr>
+<% end %>
+</div>

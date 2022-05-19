@@ -1,0 +1,48 @@
+.divmain{
+    background-color: black;
+    color:white
+
+}
+.divmain h1{
+    text-align: center;
+}
+.divmain ul{
+    display:flex;
+    justify-content :space-around
+}
+.right-side{
+    display: flex;
+    justify-content: flex-end;
+    width:100%;
+    margin-right:0;
+    
+}
+.main-div{
+    display: flex;
+    width:50%;
+    margin-left:20%;
+    height:100px;
+    background-color: lightblue;
+    border-radius: 25px;
+    border:1px solid black;
+    align-items: center;
+    justify-content: space-between;
+}
+.left-side{
+    margin-left: 10%;
+
+}
+/* .center-side{
+    margin-left:15%;
+    width:30%;
+    background-color: aqua;
+} */
+.right{
+    margin-left:20px;
+    display:flex;
+    width:10%;
+    justify-content: center;
+}
+/* .center-div{
+
+} */

@@ -1,0 +1,36 @@
+.expensesdiv{
+    width:90%;
+    height:100px;
+    background-color: cadetblue;
+    margin-left:5%;
+    border-radius:25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.left-side{
+    width:30%;
+    font-size:larger;
+    font-style: italic;
+}
+.center-side{
+    width:30%;
+    font-size:larger;
+    font-style: italic;
+    font-weight: bolder;
+}
+.rightside{
+    width:30%;
+    margin-right:150px;
+    font-size:larger;
+    font-style: italic;
+}
+.button{
+    height:30px;
+    font-size: small;
+}
+.create{
+    text-align: center;
+    margin-top: 10px;
+    margin-left: 45%;
+}

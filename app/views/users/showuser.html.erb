@@ -1,0 +1,25 @@
+<div class="blck">
+<div class="containermain">
+ 
+ <h3>Name:<%=@user.email %> </h3>
+
+    <h3>Expense description:<strong><%=@expense.invoicenum%> </strong></h3>
+    <h3>Expense description:<strong><%=@expense.description%></strong> </h3>
+    <h3>Expense description:<strong><%=@expense.amount%> </strong></h3>
+    <h3>Expense description:<strong><%=@expense.date%> </strong></h3>
+    <% if @expense.comments.any? %>
+    <% @expense.comments.each do |comment|%>
+    
+    <p><%=comment.name %>: <%= comment.description %>
+    <%end%>
+    <%end%>
+    <form method="post" action="/users/comment" data-turbo="false">
+    <%= token_tag%>
+    <input class="form-control" type="text" name="description" />
+    <input type="hidden" name="expense_id" value="<%= @expense.id%>">
+    <input type="hidden" name="name" value="<%=@user.name %>">
+    <input type="hidden" name="id" value="<%=@user.id%>">
+    <input type="submit" value="comment">
+    </form>
+</div>
+</div>
