@@ -80,17 +80,21 @@ class AdminsController < ApplicationController
     end
 
     def accept
+      @user = User.find(session[:user_id])
         @expense =Expense.find(params[:id])
         @expense.is_accpted = 'true'
-        @expense.save
+        if @expense.save
+         UserMailer.with(user:@user).comment_mail.deliver_now
         puts @expense.is_accpted
         redirect_to '/admin'
     end
 
     def reject 
+      @user = User.find(session[:user_id])
         @expense=Expense.find(params[:id])
         @expense.is_accpted='false'
-        @expense.save
+        if @expense.save
+         UserMailer.with(user:@user).comment_mail.deliver_now
         redirect_to '/admin'
     end
 
