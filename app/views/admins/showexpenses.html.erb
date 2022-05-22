@@ -6,7 +6,7 @@
 <%
 =end%>
 
-<% if !@expense.bill == 0 %>
+<% if @expense.bill.attached? %>
 <%= image_tag @expense.bill ,class: 'img' %>
 <%end%>
 <div class="containermain">
