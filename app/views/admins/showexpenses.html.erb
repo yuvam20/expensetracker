@@ -1,10 +1,15 @@
 <div class="blck">
 
 
- <%= image_tag url_for(:controller => "admins", :action => "show_image", :id => @expense.id) %>  
+ <%
+=begin%>
+ <%= image_tag url_for(:controller => "admins", :action => "show_image", :id => @expense.id) %>   
+<%
+=end%>
 
 
-<% if !@expense.bill == 0 %>
+<% if @expense.bill.attached?%>
+
 <%= image_tag @expense.bill ,class: 'img' %>
 <%end%>
 
