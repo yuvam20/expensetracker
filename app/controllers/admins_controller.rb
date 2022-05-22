@@ -88,7 +88,7 @@ class AdminsController < ApplicationController
         puts @expense.is_accpted
         redirect_to '/admin'
     end
-
+  end
     def reject 
       @user = User.find(session[:user_id])
         @expense=Expense.find(params[:id])
@@ -97,7 +97,7 @@ class AdminsController < ApplicationController
          UserMailer.with(user:@user).comment_mail.deliver_now
         redirect_to '/admin'
     end
-
+  end
     def comment
         comment=Comment.create(description:params[:description],expense_id:params[:expense_id],name:params[:name])
         user3=User.find(session[:user_id])
@@ -134,4 +134,19 @@ class AdminsController < ApplicationController
       @expense = User.find(params[:id])
       send_data @expense.bill, :type => 'image/png',:disposition => 'inline'
     end
+
+
+    
+    def expenses
+      if session[:user_id]
+        @user=User.find(session[:user_id])
+        if @user.role == 'admin'
+           @expenses = Expense.where(is_accpted: nil)
+           
+        end
+    
+    else
+      redirect_to '/admin'
+    end
+  end
 end
