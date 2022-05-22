@@ -127,7 +127,7 @@ class AdminsController < ApplicationController
     end
     def show_image
       
-      @expense = User.find(params[:id])
+      @expense = Expense.find(params[:id])
       send_data @expense.bill, :type => 'image/png',:disposition => 'inline'
     end
 end

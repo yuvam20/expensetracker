@@ -1,12 +1,13 @@
 <div class="blck">
-<%
-=begin%>
- <%= image_tag url_for(:controller => "admins", :action => "show_image", :id => @expense.id) %> 
-<%
-=end%>
+
+
+ <%= image_tag url_for(:controller => "admins", :action => "show_image", :id => @expense.id) %>  
+
+
 <% if !@expense.bill == 0 %>
 <%= image_tag @expense.bill ,class: 'img' %>
 <%end%>
+
 <div class="containermain">
  
  <h3>Name:<%=@user.email %> </h3>
