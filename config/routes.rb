@@ -15,7 +15,12 @@ Rails.application.routes.draw do
   get 'admin/reject/:id',to:'admins#reject'
   post '/admin/comment',to:'admins#comment'
   get 'admin/fetch',to: 'admins#fetchingapi'
+<<<<<<< HEAD
   get 'admins/show_image/:id',to:'admins#show_image'
+=======
+  get 'admins/show_image',to:'admins#show_image'
+  get 'admin/expenses',to:'admins#expenses'
+>>>>>>> main
 
   # User routes
   get 'users' ,to: 'users#index'

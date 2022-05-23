@@ -1,0 +1,74 @@
+<div class="form_sign">
+<%= form_with model: @user,data:{turbo: false} ,method: :patch,:url => {:action => "update", :id => @user.id, :controller => "admins"} do |form| %>
+
+ <div>
+
+<% if @user.errors.any? %>
+<%@user.errors.full_messages.each do |message| %>
+<div class="alert alert-danger" role="alert">
+<%= message %>
+</div>
+
+
+ <%end%>
+<%end%> 
+
+<table>
+<tr>
+<div>
+
+<td><%= form.label :id %></td>
+ <td><%= form.text_field :id %></td> 
+
+</div>
+</tr>
+<tr>
+<div>
+<td><%= form.label :name %></td>
+<td><%= form.text_field :name %></td>
+</div>
+</tr>
+<tr>
+<td><%= form.label :email %></td>
+<td><%= form.text_field :email %></td>
+</div>
+</tr>
+
+<tr>
+<div>
+<td><%= form.label :password %></td>
+<td><%= form.password_field :password %></td>
+</div>
+</tr>
+<tr>
+<div>
+<td><%= form.label :password_confirmation %></td>
+<td><%= form.password_field :password_confirmation %></td>
+</div>
+</tr>
+<tr>
+<div>
+<td><%= form.label :department %></td>
+<td><%= form.text_field :department %></td>
+</div>
+</tr>
+<tr>
+<div>
+<td><%= form.label :role %></td>
+<td><%= form.text_field :role %></td>
+</div>
+</tr>
+<tr>
+<div>
+<td><%= form.label :status %></td>
+<td><%= form.text_field :status %></td>
+</div>
+</tr>
+
+<div>
+
+
+<td><%= form.submit "Update" , class:"btn btn-dark button" %>
+</div>
+<% end %>
+</div>

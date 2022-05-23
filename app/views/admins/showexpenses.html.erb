@@ -1,5 +1,6 @@
 <div class="blck">
 
+<<<<<<< HEAD
 
  <%
 =begin%>
@@ -10,6 +11,15 @@
 
 <% if @expense.bill.attached?%>
 
+=======
+ <%
+=begin%>
+ <%= image_tag url_for(:controller => "admins", :action => "show_image", :id => @expense.id) %>  
+<%
+=end%>
+
+<% if @expense.bill.attached? %>
+>>>>>>> main
 <%= image_tag @expense.bill ,class: 'img' %>
 <%end%>
 
