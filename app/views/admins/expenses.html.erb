@@ -1,12 +1,7 @@
-<div class="container">
-<div class="nameemail">
-
-<%=@user.name%>,<%=@user.email %>
-</div>
-
+<%=render 'nav' %>
 <div class="expenses">
-<% if @user.expenses.any? %>
-<%userexp = @user.expenses.order("created_at DESC") %>
+
+<%userexp = @expenses.order(userexp_at: :desc) %>
 <% userexp.each do |expense| %>
 <div class="expensesdiv" %>
 <div class="btn btn-success"><%= expense.invoicenum %></div>
@@ -33,10 +28,5 @@
 
 </div>
 <%end%>
-<%end%>
-
-</div>
-
-
 
 </div>
