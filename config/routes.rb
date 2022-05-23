@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   post '/admin/comment',to:'admins#comment'
   get 'admin/fetch',to: 'admins#fetchingapi'
   get 'admins/show_image',to:'admins#show_image'
+  get 'admin/expenses',to:'admins#expenses'
 
   # User routes
   get 'users' ,to: 'users#index'
